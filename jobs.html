@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <title>UTC Jobs Intel.co.uk</title>
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/body.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACxdizGqGAI/6hgCP+oYAj/qGAI/6hgCP/CmWcSAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACoYAj/qGAI/6hgCP+oYAj/qGAI/6hgCP+oYAj/qGAI/6hgCP+nXwn/AAAAAAAAAAAAAAAAAAAAAAAAAACoYAj/r24h0gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACoXwb/qGAI/6hgCP8AAAAAAAAAAAAAAACmXgb3xZdbigAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACoYAj/AAAAAAAAAAAAAAAAqGAI/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKhgCP8AAAAAAAAAAAAAAACoYAj/AAAAAKdgCP8AAAAAqGAI/9e4jBOoYAj/AAAAAAAAAAAAAAAAAAAAAAAAAACoYAj/AAAAAKhgCP8AAAAAqGAI/wAAAACnYAj/qGAI/wAAAACoYAj/AAAAAAAAAACoYAj/AAAAAKhgCP8AAAAAqGAI/wAAAACoYAj/AAAAAKhgCP8AAAAAp2AI/6hgCP8AAAAAqGAI/6hgCP+oYAj/qGAI/wAAAACoYAj/AAAAAKhgCP8AAAAAqGAI/wAAAACoYAj/AAAAAKdfCP+oYAj/AAAAAKhgCP8AAAAAqGAI/6hgCP8AAAAAAAAAAKhgCP8AAAAAAAAAAKhgCP8AAAAAqGAI/6hgCP8AAAAAqGAI/6hgCP+oYAj/qGAI/wAAAACoYAj/AAAAAAAAAACoYAj/AAAAAKhfCP8AAAAAAAAAAAAAAAAAAAAAAAAAAKhgCP8AAAAAAAAAAAAAAAAAAAAAqGAI/wAAAAAAAAAAqGAI/wAAAAAAAAAAqGAI/wAAAAAAAAAAAAAAAAAAAACqZRDsAAAAAAAAAAAAAAAAAAAAAKhgCP8AAAAAAAAAAKhgCP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACoYAj/AAAAAAAAAAAAAAAAAAAAAKhgCP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACoYAj/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAp14F/6lfB/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACoYAj/2baLGQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxZpmaahgCP+oYAj/qGAI/6hgCP+oYAf/AAAAAAAAAAAAAAAA4H8AAMAPAACfxwAAP/cAAH//AAB1XwAAVLUAAFSFAABUpgAA0hYAAL72AADe9gAA//4AAPf9AAD5+wAA/wcAAA==" rel="icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css"> <!-- NEED FOR STYLE Footer -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!-- NEED FOR STYLE Footer -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+        //Navigation
+        function ValidateForm(frm) {
+            if (frm.First_Name.value == "") { alert('First name is required.'); frm.First_Name.focus(); return false; }
+            if (frm.Last_Name.value == "") { alert('Last name is required.'); frm.Last_Name.focus(); return false; }
+            if (frm.Email_Address.value == "") { alert('Email address is required.'); frm.Email_Address.focus(); return false; }
+            if (frm.Email_Address.value.indexOf("@") < 1 || frm.Email_Address.value.indexOf(".") < 1) { alert('Please enter a valid email address.'); frm.Email_Address.focus(); return false; }
+            if (frm.Position.value == "") { alert('Position is required.'); frm.Position.focus(); return false; }
+            if (frm.Phone.value == "") { alert('Phone is required.'); frm.Phone.focus(); return false; }
+            if (frm.skip_CaptchaCode.value == "") { alert('Enter security code.'); frm.skip_CaptchaCode.focus(); return false; }
+            return true;
+        }
+        function ReloadCaptchaImage(captchaImageId) {
+            var obj = document.getElementById(captchaImageId);
+            var src = '' + obj.src;
+            obj.src = '';
+            var date = new Date();
+            var pos = src.indexOf('&rad=');
+            if (pos >= 0) { src = src.substr(0, pos); }
+            obj.src = src + '&rad=' + date.getTime();
+            return false;
+        }
+        //Modal
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <div class="topnav" id="myTopnav">
+        <a href="index.html">Home</a>
+        <a href="jobs.html" class="activenav">Jobs</a>
+        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+    <!-- Loading and Navigation END-->
+    <!-- WEB BODY -->
+    <div class="hero-ima">
+    </div>
+    <hr class="hr">
+    <div class="container">
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Apply</button>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Web Developer</h4>
+                    </div>
+                    <div class="modal-body">
+                        A web designer creates the look, layout, and features of a website. The job involves understanding both graphic design and computer programming. Once a website is created, a designer helps with maintenance and additions to the website. They work with development teams or managers for keeping the site up-to-date and prioritizing needs, among other tasks.
+                        The U.S. Bureau of Labor Statistics reported in 2015 that the median hourly wage for web developers, who perform the same duties as web designers, was $31.23, or $64,970 annually. The 2014-2024 projected job growth for web developers was 27%, per the BLS. According to the agency, the median income for graphic designers in 2015 was $46,900 ($22.55 hourly). The BLS projected job growth of 1% between 2014 and 2024 for this occupation.
+                        <hr class="hr">
+                        <form action="https://www.SnapHost.com/captcha/send.aspx" id="ContactUsCaptchaWebForm" method="post" onsubmit="return ValidateForm(this);" target="_top">
+                            <input id="skip_WhereToSend" name="skip_WhereToSend" type="hidden" value="renato.martins39@gmail.com" />
+                            <input id="skip_SnapHostID" name="skip_SnapHostID" type="hidden" value="X4XK8UDMT848" />
+                            <input id="skip_WhereToReturn" name="skip_WhereToReturn" type="hidden" value="index.html" />
+                            <input id="skip_Subject" name="skip_Subject" type="hidden" value="Employment Application" />
+                            <input id="skip_ShowUsersIp" name="skip_ShowUsersIp" type="hidden" value="1" />
+                            <input id="skip_SendCopyToUser" name="skip_SendCopyToUser" type="hidden" value="1" />
+                            <table border="0" cellpadding="5" cellspacing="0">
+                                <tr>
+                                    <td style="width:50%">
+                                        <b>First name *</b><br />
+                                        <input name="First_Name" type="text" maxlength="50" style="width:260px" />
+                                    </td>
+                                    <td style="width:50%">
+                                        <b>Last name *</b><br />
+                                        <input name="Last_Name" type="text" maxlength="50" style="width:260px" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <b>Email *</b><br />
+                                        <input name="Email_Address" type="text" maxlength="100" style="width:535px" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <b>Portfolio website</b><br />
+                                        <input name="Portfolio" type="text" maxlength="255" value="http://" style="width:535px" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <b>Position you are applying for *</b><br />
+                                        <input name="Position" type="text" maxlength="100" style="width:535px" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">
+                                        <b>Salary requirements</b><br />
+                                        <input name="Salary" type="text" maxlength="50" style="width:260px" />
+                                    </td>
+                                    <td style="width:50%">
+                                        <b>When can you start?</b><br />
+                                        <input name="StartDate" type="text" maxlength="50" style="width:260px" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:50%">
+                                        <b>Phone *</b><br />
+                                        <input name="Phone" type="text" maxlength="50" style="width:260px" />
+                                    </td>
+                                    <td style="width:50%">
+                                        <b>Fax</b><br />
+                                        <input name="Fax" type="text" maxlength="50" style="width:260px" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <b>Are you willing to relocate?</b><br />
+                                        <input name="Relocate" type="radio" value="Yes" checked="checked" /> Yes &nbsp; &nbsp; &nbsp;
+                                        <input name="Relocate" type="radio" value="No" /> No &nbsp; &nbsp; &nbsp;
+                                        <input name="Relocate" type="radio" value="NotSure" /> Not sure
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <b>Last company you worked for</b><br />
+                                        <input name="Organization" type="text" maxlength="100" style="width:535px" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <b>Reference / Comments / Questions</b><br />
+                                        <textarea name="Reference" rows="7" cols="40" style="width:535px"></textarea>
+                                    </td>
+                                </tr>
+                            </table>
+                            <br />
+                            <div style="text-align:center;">
+                                <table border="0" cellpadding="0" cellspacing="0" style="text-align:center; width:300px; margin:auto;">
+                                    <tr>
+                                        <td colspan="2" style="padding-bottom:18px;">      
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><i>Enter security code</i></td>
+                                        <td>SECURITY CODE</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input name="skip_CaptchaCode" type="text" maxlength="6"
+                                                   style="width:130px; height:28px; font-size:24px; text-align:center;" />
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br /><br />
+                                <input name="skip_Submit" type="submit" value="Send Application" />
+                            </div>
+                        </form>
+                    
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WEB BODY END-->
+    <!-- Footer Start -->
+    <footer id="myFooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div><img src="img/logo.png" alt="Logo" width="120" height="84"></div>
+                </div>
+                <div class="col-sm-2">
+                    <h5>Pages</h5>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="jobs.html">Jobs</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h5>Informations</h5>
+                    <ul>
+                        <li><a href="https://www.intel.co.uk/content/www/uk/en/company-overview/company-overview.html">Company Information</a></li>
+                        <li><a href="mailto:18rmartins@utcswindon.co.uk?Subject=Website%20Designer%20Possition">Contact us</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <div class="social-networks">
+                        <a href="https://twitter.com/intel" class="twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/Intel" class="facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.youtube.com/channel/UCk7SjrXVXAj8m8BLgzh6dGA" class="google"><i class="fa fa-youtube"></i></a>
+                    </div>
+                    <button type="button" class="btn btn-default"><a href="mailto:18rmartins@utcswindon.co.uk?Subject=Website%20Designer%20Possition">Contact us</a></button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2018 <a href="https://utcswindon.co.uk">UTC</a> - Renato Martins </p>
+        </div>
+    </footer>
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Footer END -->
+</body>
+</html>

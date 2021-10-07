@@ -1,0 +1,36 @@
+﻿.no-js #loader {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: none;
+}
+
+.js #loader {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: block;
+    position: absolute;
+    left: 100px;
+    top: 0;
+}
+/*Main*/
+.giphy-embed {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url(../img/loading.gif) center no-repeat #000000;
+    background-color: #0071c5;
+}
+
+.center {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url(../img/loading.gif) center no-repeat #000000;
+    background-color: #0071c5;
+}
